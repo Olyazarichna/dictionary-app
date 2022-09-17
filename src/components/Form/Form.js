@@ -6,10 +6,11 @@ export  const Form =()=>{
     const handleChange=(event)=>{
       setSearch(event.currentTarget.value) ;
     }
-    
+
     const handleSubmit=(event)=>{
         event.preventDefault();
         findWord(search);
+        setSearch('');
     }
   
     return(
