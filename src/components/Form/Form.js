@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Result from "../Result/Result";
-import { findWord } from "../../services/api";
-
-export const Form = (props) => {
-  console.log(props);
+// import { findWord } from "../../services/api";
+import axios from "axios";
+export const Form = () => {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState(null);
 
@@ -11,9 +10,17 @@ export const Form = (props) => {
     setSearch(event.currentTarget.value);
   };
 
+  const URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+  const findWord = (word) => {
+    axios.get(`${URL}${word}`).then(handleResp);
+  };
+
+  const handleResp = (response) => {
+    setResults(response.data);
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('search', search);
+
     findWord(search);
     setSearch("");
   };
@@ -30,7 +37,7 @@ export const Form = (props) => {
         />
         <button>Search</button>
       </form>
-      <Result />
+      <Result info={results} />
     </>
   );
 };
