@@ -1,8 +1,11 @@
 import { useState } from "react";
+import Result from "../Result/Result";
 import { findWord } from "../../services/api";
 
-export const Form = () => {
+export const Form = (props) => {
+  console.log(props);
   const [search, setSearch] = useState("");
+  const [results, setResults] = useState(null);
 
   const handleChange = (event) => {
     setSearch(event.currentTarget.value);
@@ -10,6 +13,7 @@ export const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log('search', search);
     findWord(search);
     setSearch("");
   };
@@ -26,6 +30,7 @@ export const Form = () => {
         />
         <button>Search</button>
       </form>
+      <Result />
     </>
   );
 };

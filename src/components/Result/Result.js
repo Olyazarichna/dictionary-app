@@ -1,10 +1,17 @@
+
 export const Result=(props)=>{
-    console.log(props);
+    console.log('props',props);
+    // let info = props.data;
+    // console.log('info',info);
+
     return(
         <>
-        <p>
-llkmkl
-        </p>
+        <div>
+            {props ?(
+                <p></p>
+            ):(<p>Search a word</p>)}
+
+        </div>
         </>
     )
 }
