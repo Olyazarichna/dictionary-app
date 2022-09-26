@@ -1,13 +1,10 @@
-
-import './App.css';
-import Form from './components/Form/Form';
-// import Result from './components/Result/Result';
+import "./App.css";
+import Form from "./components/Form/Form";
 function App() {
   return (
     <div className="App">
-    <h1>Dictionary</h1>
-    <Form/>
-    {/* <Result/> */}
+      <h1 className="title">Dictionary</h1>
+      <Form />
     </div>
   );
 }

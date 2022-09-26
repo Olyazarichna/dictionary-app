@@ -1,0 +1,10 @@
+.title, .meaningList{
+    text-align: left;
+}
+.meaningList{
+padding: 0;
+}
+.example{
+    font-style: italic;
+    font-weight: 600;
+}
