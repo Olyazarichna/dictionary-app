@@ -1,7 +1,11 @@
 li{
     list-style: none;
 }
-.word{
+.word, .text{
     text-align: left;
  
+}
+.text{
+  font-size: 18px;
+  font-weight: 700;
 }
