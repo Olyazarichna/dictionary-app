@@ -1,5 +1,5 @@
 import css from "./Meanings.module.css";
-
+import { Synonyms } from "../components/Synonyms/Synonyms";
 export const Meanings = ({ meaning }) => {
   console.log("meaning", meaning);
   return (
@@ -12,13 +12,18 @@ export const Meanings = ({ meaning }) => {
               <p>{definition.definition}</p>
               {definition.example && (
                 <p className={css.example}>
-                 Example: {definition.example}
+                 <strong>Example:</strong>  {definition.example}
                 </p>
               )}
             </li>
           );
         })}{" "}
       </ul>
+<Synonyms synonyms={meaning.synonyms}/>
+      {/* {
+        meaning.synonyms &&(<p>Synonyms: {meaning.synonyms}</p>)
+      } */}
+      
     </>
   );
 };
