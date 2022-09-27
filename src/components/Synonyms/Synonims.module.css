@@ -1,0 +1,14 @@
+.list{
+    margin: 0;
+    text-align: left;
+}
+.section{
+    background-color: #fff;
+    padding: 20px 0;
+}
+.listItem{
+    padding: 0;
+}
+p{
+    margin: 0;
+}

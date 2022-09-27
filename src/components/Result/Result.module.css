@@ -1,11 +1,22 @@
 li{
     list-style: none;
 }
+ul{
+  padding: 0;
+}
 .word, .text{
-    text-align: left;
- 
+    text-align: center;
+ margin: 0;
 }
 .text{
+  margin-top: 20px;
   font-size: 18px;
   font-weight: 700;
+}
+.formSection{
+  border: 1px solid #ddd;
+  box-shadow:0 5px 15px rgb(0 0 0 / 10%);
+  border-radius: 4px;
+  margin: 20px 0;
+  padding: 20px;
 }

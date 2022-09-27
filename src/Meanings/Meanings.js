@@ -1,7 +1,6 @@
 import css from "./Meanings.module.css";
 import { Synonyms } from "../components/Synonyms/Synonyms";
 
-
 export const Meanings = ({ meaning }) => {
   return (
     <>
@@ -10,17 +9,18 @@ export const Meanings = ({ meaning }) => {
         {meaning.definitions.map((definition, index) => {
           return (
             <li key={index} className={css.meaningListItem}>
-              <p>{definition.definition}</p>
+              <p className={css.text}>{definition.definition}</p>
               {definition.example && (
                 <p className={css.example}>
-                 <strong>Example:</strong>  {definition.example}
+                  <strong>Example:</strong> {definition.example}
                 </p>
               )}
             </li>
           );
-        })}{" "}
+        })}
       </ul>
-<Synonyms synonyms={meaning.synonyms}/>    
+
+      <Synonyms synonyms={meaning.synonyms} />
     </>
   );
 };

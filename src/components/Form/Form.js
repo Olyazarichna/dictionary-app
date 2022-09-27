@@ -29,18 +29,20 @@ export const Form = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input
-          className={css.input}
-          type="search"
-          placeholder="Search"
-          autoFocus={true}
-          onChange={handleChange}
-          value={search}
-        />
-        <button className={css.btn}>Search</button>
-      </form>
-      <Result data={results} />
+      <section className={css.formSection}>
+        <form onSubmit={handleSubmit}>
+          <input
+            className={css.input}
+            type="search"
+            placeholder="Search"
+            autoFocus={true}
+            onChange={handleChange}
+            value={search}
+          />
+          <button className={css.btn}>Search</button>
+        </form>
+      </section>
+        <Result data={results} />
     </>
   );
 };
