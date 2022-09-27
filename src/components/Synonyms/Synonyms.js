@@ -1,12 +1,15 @@
 export const Synonyms = ({ synonyms }) => {
-  console.log(synonyms);
+
   return (
     <ul>
       Synonyms:
-      {synonyms &&
+      {synonyms.length > 0 ? (
         synonyms.map((synonym, index) => {
-          return <li key={index}> {synonym}</li>;
-        })}
+          return <li key={index}>{synonym}</li>;
+        })
+      ) : (
+        <p>Can't find any synonyms</p>
+      )}
     </ul>
   );
 };

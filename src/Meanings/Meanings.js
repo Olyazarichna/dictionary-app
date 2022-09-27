@@ -1,7 +1,8 @@
 import css from "./Meanings.module.css";
 import { Synonyms } from "../components/Synonyms/Synonyms";
+
+
 export const Meanings = ({ meaning }) => {
-  console.log("meaning", meaning);
   return (
     <>
       <h3 className={css.title}>{meaning.partOfSpeech}</h3>
@@ -19,11 +20,7 @@ export const Meanings = ({ meaning }) => {
           );
         })}{" "}
       </ul>
-<Synonyms synonyms={meaning.synonyms}/>
-      {/* {
-        meaning.synonyms &&(<p>Synonyms: {meaning.synonyms}</p>)
-      } */}
-      
+<Synonyms synonyms={meaning.synonyms}/>    
     </>
   );
 };
