@@ -1,4 +1,5 @@
 import css from "./Picture.module.css";
+import img from '../../img/photos.png';
 export const Pictures = ({ pictures }) => {
   console.log(pictures);
   return (
@@ -6,8 +7,7 @@ export const Pictures = ({ pictures }) => {
       {pictures && (
         <section className={css.formSection}>
           <ul className={css.list}>
-            {pictures &&
-              pictures.map((picture) => {
+            {pictures.length>0 ? (pictures.map((picture) => {
                 return (
                   <li key={picture.id}>
                     <a
@@ -24,10 +24,12 @@ export const Pictures = ({ pictures }) => {
                     </a>
                   </li>
                 );
-              })}
+              })
+           )  :(<img src={img} alt="nothing" width="200"/>)}
           </ul>
         </section>
-      )}
+      )
+    }
     </>
   );
 };
