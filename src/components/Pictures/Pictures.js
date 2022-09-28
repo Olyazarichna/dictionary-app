@@ -1,7 +1,6 @@
 import css from "./Picture.module.css";
 import img from '../../img/photos.png';
 export const Pictures = ({ pictures }) => {
-  console.log(pictures);
   return (
     <>
       {pictures && (
