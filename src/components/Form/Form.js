@@ -2,19 +2,31 @@ import { useState } from "react";
 import Result from "../Result/Result";
 import axios from "axios";
 import css from "./Form.module.css";
-
+import {Pictures} from "../Pictures/Pictures";
 export const Form = () => {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState(null);
+  const [photos, setPhotos] = useState(null);
 
   const handleChange = (event) => {
     setSearch(event.currentTarget.value);
   };
 
   const URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
-  const findWord = async (word) => {
-    const resp = await axios.get(`${URL}${word}`).then(handleResp);
-    return resp;
+  
+  const findWord = (word) => {
+    axios.get(`${URL}${word}`).then(handleResp);
+    const pexelsApiKey =
+    "563492ad6f9170000100000161f8cbe1db27454c8fb43e89023ce692";
+  const pexelsApiUrl = `https://api.pexels.com/v1/search?query=${word}&per_page=6`;
+
+
+let headers = { Authorization: `Bearer ${pexelsApiKey}` };
+axios.get(pexelsApiUrl, { headers: headers }).then(handleRespPictures);
+  };
+
+  const handleRespPictures = (response) => {
+    setPhotos(response.data.photos);
   };
 
   const handleResp = (response) => {
@@ -41,8 +53,9 @@ export const Form = () => {
           />
           <button className={css.btn}>Search</button>
         </form>
-      </section>
-        <Result data={results} />
+      </section> 
+      <Pictures pictures={photos}/>
+      <Result data={results} />
     </>
   );
 };

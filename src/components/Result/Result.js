@@ -5,7 +5,7 @@ import css from "./Result.module.css";
 export const Result = ({ data }) => {
   return (
     <>
-      {data ? (
+      {data && (
         <>
         <section className={css.formSection}>
           <h2 className={css.word}>{data.word}</h2>
@@ -29,9 +29,9 @@ export const Result = ({ data }) => {
             })}
           </section>
         </>
-      ) : (
-        <p className={css.text}>Search a word</p>
-      )}
+      ) 
+    
+      }
     </>
   );
 };
