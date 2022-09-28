@@ -7,6 +7,7 @@ export const Result = ({ data }) => {
     <>
       {data ? (
         <>
+        <section className={css.formSection}>
           <h2 className={css.word}>{data.word}</h2>
           {data.phonetics ? (
             data.phonetics.map((phonetic, index) => {
@@ -21,6 +22,7 @@ export const Result = ({ data }) => {
           ) : (
             <p className={css.word}>{data.phonetic}</p>
           )}
+          </section>
           <section className={css.formSection}>
             {data.meanings.map((meaning, index) => {
               return <Meanings key={index} meaning={meaning} />;
