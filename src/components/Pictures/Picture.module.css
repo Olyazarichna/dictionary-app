@@ -3,18 +3,23 @@
   box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
   border-radius: 4px;
   margin: 20px 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-@media screen and (max-width: 760px) {
-  .formSection {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-  }
+ 
 }
 
+.list{
+     display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 10px;
+}
+@media screen and (max-width: 760px) {
+    .list {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
 .picture {
-  max-width: 250px;
+  max-width: 300px;
   height: auto;
   border-radius: 4px;
 }

@@ -1,4 +1,4 @@
-import css from "./Synonims.module.css";
+import css from "./Synonyms.module.css";
 
 export const Synonyms = ({ synonyms }) => {
   return (
